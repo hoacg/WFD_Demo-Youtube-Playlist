@@ -15,6 +15,14 @@ export class YoutubeService {
       {
         title: 'Lac troi',
         id: 'Llw9Q6akRo4'
+      },
+      {
+        title: 'Hong nhan',
+        id: '8x2NjwwHUbQ'
+      },
+      {
+        title: 'Tu tam',
+        id: '4GuR_g75ufY'
       }
     ];
   }

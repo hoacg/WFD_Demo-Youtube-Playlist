@@ -1,13 +1,19 @@
-<ul>
+<div class="row">
 
-  <li *ngFor="let video of videoList">
+  <div class="col-md-4" *ngFor="let video of videoList">
 
-    <a routerLink="/video/{{ video.id }}">
 
-      {{ video.title }}
+    <div class="card" style="width: 18rem;"
+         routerLink="/video/{{ video.id }}"
+    >
+      <img src="https://img.youtube.com/vi/{{video.id}}/hqdefault.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">
+          {{ video.title }}
+        </p>
+      </div>
+    </div>
 
-    </a>
+  </div>
 
-  </li>
-
-</ul>
+</div>
