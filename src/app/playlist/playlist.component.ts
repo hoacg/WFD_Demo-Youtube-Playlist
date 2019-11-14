@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {YoutubeService} from '../youtube.service';
+import {Video} from '../video';
 
 @Component({
   selector: 'app-playlist',
@@ -8,7 +9,7 @@ import {YoutubeService} from '../youtube.service';
 })
 export class PlaylistComponent implements OnInit {
 
-  videoList: any[];
+  videoList: Video[];
 
   constructor(private youtubeService: YoutubeService) { }
 

@@ -4,6 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 import { PlaylistComponent } from './playlist/playlist.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '', component: PlaylistComponent
+  },
+  {
+    path: 'video/:id', component: PlayerComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -12,7 +22,8 @@ import { PlaylistComponent } from './playlist/playlist.component';
     PlaylistComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
