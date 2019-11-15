@@ -9,6 +9,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddVideoComponent implements OnInit {
 
+  isSuccess = false;
+
   constructor(private youtubeService: YoutubeService) { }
 
   videoForm: FormGroup;
@@ -23,7 +25,7 @@ export class AddVideoComponent implements OnInit {
   onSubmit() {
     const video = this.videoForm.value;
     this.youtubeService.addVideo(video).subscribe ( result => {
-      alert('Đã tạo video thành công!');
+      this.isSuccess = true;
     });
   }
 }

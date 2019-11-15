@@ -1,3 +1,7 @@
+<div *ngIf="isSuccess" class="alert alert-success" role="alert">
+  Đã thêm video thành công!
+</div>
+
 <form [formGroup]="videoForm" (ngSubmit)="onSubmit()" >
   <div class="form-group">
     <label for="exampleInputEmail1">ID</label>
