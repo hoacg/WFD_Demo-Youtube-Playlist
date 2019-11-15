@@ -8,13 +8,15 @@ import {Observable} from 'rxjs';
 })
 export class YoutubeService {
 
+  API_URL = 'http://localhost:5000/';
+
   constructor(private httpClient: HttpClient) { }
 
   getVideoList(): Observable<Video[]> {
-    return this.httpClient.get<Video[]>('http://localhost:5000/playlist');
+    return this.httpClient.get<Video[]>(this.API_URL + 'playlist');
   }
 
   addVideo(video: Video): Observable<Video> {
-    return this.httpClient.post<Video>('http://localhost:5000/video', video);
+    return this.httpClient.post<Video>(this.API_URL + 'video', video);
   }
 }
