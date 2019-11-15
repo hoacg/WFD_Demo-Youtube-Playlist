@@ -14,7 +14,12 @@ export class PlaylistComponent implements OnInit {
   constructor(private youtubeService: YoutubeService) { }
 
   ngOnInit() {
-    this.videoList = this.youtubeService.getVideoList();
+    // this.videoList = this.youtubeService.getVideoList();
+
+    this.youtubeService.getVideoList().subscribe( result => {
+      this.videoList = result;
+    });
+
   }
 
 }

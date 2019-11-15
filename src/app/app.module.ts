@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { AddVideoComponent } from './add-video/add-video.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -12,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'video/:id', component: PlayerComponent
+  },
+  {
+    path: 'add-video', component: AddVideoComponent
   }
 ];
 
@@ -19,11 +25,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PlayerComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    AddVideoComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
